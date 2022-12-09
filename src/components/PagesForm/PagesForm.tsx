@@ -28,9 +28,11 @@ const PagesForm: React.FC<Props> = ({onSubmit}) => {
     onSubmit({...page});
   };
 
+  const pagesName = [...PAGESNAME];
+  pagesName.splice(PAGESNAME.length-1);
   return (
     <form onSubmit={onFormSubmit}>
-      <h4>Create page</h4>
+      <h4>Edit page</h4>
       <div className="form-group mb-2">
         <label htmlFor="page">Page</label>
         <select
@@ -41,7 +43,7 @@ const PagesForm: React.FC<Props> = ({onSubmit}) => {
           onChange={onFieldChange}
         >
           <option value="" disabled>Please select a page</option>
-          {PAGESNAME.map(page => (
+          {pagesName.map(page => (
             <option key={page.id} value={page.id}>
               {page.title}
             </option>

@@ -6,8 +6,9 @@ import PagesForm from "../../components/PagesForm/PagesForm";
 
 const NewQuote = () => {
   const navigate = useNavigate();
-  const createPage = async (quote: ApiPage) => {
-    await axiosApi.post('/pages.json', quote);
+  const createPage = async (page: ApiPage) => {
+    console.log(page);
+    await axiosApi.put('/pages/' + page.page + '.json', page);
     navigate('/');
   };
   return (

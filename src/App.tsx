@@ -14,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages/>}/>
           <Route path="/pages/:pageName" element={<Pages/>}/>
-          <Route path="/new-page" element={<NewPage/>}/>
+          <Route path="/pages/admin" element={<NewPage/>}/>
+          <Route path="*" element={<h3>Not found :(</h3>}/>
         </Routes>
       </main>
     </>
